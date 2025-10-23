@@ -1,25 +1,60 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include<iostream>
+using namespace std;
+class word
+{
+	public:
+		void guess()
+		{
+			int i=0,attempts=1,flag=0;
+			char ch;
+			char str[20]="science";
+			char str1[20];
+			for(i=0;str[i]!='\0';i++)
+			{
+			//str1[i]=str[i];
+			str1[i]='*';
+			}
+			cout<<str1;
+			while(attempts<=4)
+			{
+				cout<<"enter your character";
+				cin>>ch;
+				for(int i=0;str[i]!='\0';i++)
+				{
+					if(ch==str[i])
+			         {
+			         str1[i]=ch;
+			         cout<<str1<<"\n";
+			         flag=1;
+					 }
+					
+		}
+            if(flag==0)
+	{
+             
 
-// Simple program demonstrating STL and vectors
-int main() {
-    std::vector<int> numbers = {5, 2, 9, 1, 5, 6};
 
-    std::cout << "Original numbers: ";
-    for (int n : numbers) std::cout << n << " ";
-    std::cout << std::endl;
 
-    // Sort numbers using STL
-    std::sort(numbers.begin(), numbers.end());
 
-    std::cout << "Sorted numbers: ";
-    for (int n : numbers) std::cout << n << " ";
-    std::cout << std::endl;
 
-    // Find max element
-    int max_val = *std::max_element(numbers.begin(), numbers.end());
-    std::cout << "Maximum number: " << max_val << std::endl;
 
-    return 0;
+cout<<"\nsorry! the character is not existing"<<endl;
+			         		
+                                     attempts++;
+			}					 
+			}
+			
+			if(attempts==4)
+			cout<<"sorry";
+			else
+			cout<<str1;
+			}
+			};
+
+int main()
+{
+	word w;
+	w.guess();
+	return 0;
 }
+
